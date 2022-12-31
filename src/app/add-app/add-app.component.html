@@ -1,0 +1,136 @@
+<app-headr></app-headr>
+<div class="one-wrper-applicant">
+  <div class="towe-wrper-applicant">
+    <div class="thrid-wrper-applicant w-full py-20">
+      <div class="title flex flex-col justify-center items-center p-6">
+        <p class="font-bold">new</p>
+        <h1 class="text-3xl">Applicant</h1>
+      </div>
+      <div class="one-todolist">
+        <div class="tow-todolist">
+          <div class="thrid-todolist w-full flex justify-center items-center">
+            <form
+              action=""
+              [formGroup]="addAppliocation"
+              (ngSubmit)="onSubmit()"
+              class="w-full flex justify-center items-center"
+            >
+              <div class="star-fild w-1/2 justify-center items-center">
+                <div class="w-full justify-center flex items-center">
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>Name</mat-label>
+                    <input
+                      matInput
+                      formControlName="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                    <mat-error></mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>Email</mat-label>
+                    <input
+                      matInput
+                      placeholder="pat@example.com"
+                      formControlName="email"
+                      required
+                    />
+                    <mat-error></mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="w-full justify-center flex items-center pt-8">
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>Phone</mat-label>
+                    <input
+                      matInput
+                      placeholder="Phone"
+                      formControlName="phone"
+                      required
+                    />
+                    <mat-error></mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>Status</mat-label>
+                    <mat-select [(value)]="select" formControlName="status" >
+                      <mat-option>None</mat-option>
+                      <mat-option value="admin">admin</mat-option>
+                      <mat-option value="Super admin">Super admin</mat-option>
+                      <mat-option value="user">user</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="job justify-start flex items-center ml-9">
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>job</mat-label>
+                    <mat-select [(value)]="selected" formControlName="job">
+                      <mat-option [value]="getTitle">{{getTitle}}</mat-option>
+                      <mat-option value="BackEnd developer"
+                        >BackEnd developer</mat-option
+                      >
+                      <mat-option value="FerontEnd developer"
+                        >FerontEnd developer</mat-option
+                      >
+                      <mat-option value="full stackt developer"
+                        >full stackt developer</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <div class="add-button flex justify-center items-center px-5">
+                    <button
+                    (click)="goToJob()"
+                      mat-raised-button
+                      class="bg-blue-600 w-20 rounded-2xl relative bottom-2 h-14  hover:bg-slate-500 hover:text-white hover:shadow-lg "
+                    >
+                      <span
+                        class="material-icons flex justify-center items-center text-white"
+                        >add</span
+                      >
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="one-choose-file w-full flex justify-center items-center"
+                >
+                  <div
+                    class="choos-file flex justify-start items-center w-1/2 h-14 border-2 bg-slate-200"
+                  >
+                  <label
+                  matTooltipClass="bg-xbWisteria"
+                  matTooltip="Upload"
+                  class="input-container cursor-pointer flex justify-center items-center ml-5"
+                >
+                  <input
+                    class="hidden"
+                    type="file"
+                    ngFileSelect
+                    [options]="uploadOptions"
+                    [uploadInput]="uploadInput"
+                    (uploadOutput)="startUpload($event)"
+                  />
+                  <div
+                    class="img-container border-2 rounded-xl border-xbWisteria hover:shadow-2xl sm_smobile:w-16 md:w-28 sm_smobile:p-3 md:p-4"
+                  >
+                   <h1>upload</h1>
+                  </div>
+                </label>
+                  </div>
+               
+                </div>
+                <div
+                  class="submit-button flex justify-center items-center py-7"
+                >
+                  <button
+                    type="submit "
+                    class="bg-blue-600 flex justify-center items-center h-14 w-24 rounded-xl text-white hover:bg-slate-500 hover:text-white hover:shadow-2xl   "
+                  >
+                    submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

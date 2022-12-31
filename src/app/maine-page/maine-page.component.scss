@@ -1,0 +1,19 @@
+div{
+    .main-tab{
+        .main-table-one{
+            .main-table-tow{
+                mat-table{
+                    mat-header-row{
+                        mat-sort-header{
+                            mat-sort-header-container {
+                                mat-sort-header-arrow{
+                                    color:#fff;
+                                }
+                            }
+                        } 
+                    }
+                } 
+            }
+        }
+    }
+}

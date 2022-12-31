@@ -1,0 +1,119 @@
+<app-headr></app-headr>
+<div class="one-wrper-applicant">
+  <div class="towe-wrper-applicant">
+    <div class="thrid-wrper-applicant w-full py-20">
+      <div class="title flex flex-col justify-center items-center p-6">
+        <p class="font-bold">new</p>
+        <h1 class="text-3xl">job</h1>
+      </div>
+      <div class="one-todolist">
+        <div class="tow-todolist">
+          <div class="thrid-todolist w-full flex justify-center items-center">
+            <form
+              action=""
+              [formGroup]="addJob"
+              (ngSubmit)="onSubmit()"
+              class="w-full flex justify-center items-center"
+            >
+              <div class="star-fild w-1/2 justify-center items-center">
+                <div class="w-full justify-center flex items-center">
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>Title</mat-label>
+                    <input
+                      matInput
+                      placeholder="Title"
+                      formControlName="title"
+                    />
+                    <mat-error></mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>type</mat-label>
+                    <input matInput placeholder="Type" formControlName="type" />
+                    <mat-error></mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="w-full justify-center flex items-center pt-8">
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>Location</mat-label>
+                    <input
+                      matInput
+                      placeholder="Location"
+                      formControlName="location"
+                    
+                    />
+                    <mat-error></mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill" class="px-5">
+                    <mat-label>Category</mat-label>
+                    <mat-select [(value)]="selected" formControlName="category">
+                      <mat-option>None</mat-option>
+                      <mat-option value="option1">Option 1</mat-option>
+                      <mat-option value="option2">Option 2</mat-option>
+                      <mat-option value="option3">Option 3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="job flex justify-start items-center px-24">
+                  <div
+                    class="add-button w-full flex justify-start items-center px-5"
+                  >
+                    <div class="w-full flex justify-between relative right-14">
+                      <div
+                        (click)="activeMap = !activeMap"
+                        class="cursor-pointer bg-blue-600 w-52 rounded-lg relative bottom-2 h-14 text-white flex justify-center items-center"
+                      >
+                        Choose Location from Map
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="discription w-full justify-start flex items-center px-20"
+                >
+                  <div class="w-full">
+                    <h1 class="w-full text-xl">discription</h1>
+                    <mat-form-field
+                      class="example-full-width w-96"
+                      appearance="fill"
+                    >
+                      <mat-label>Add job description here please</mat-label>
+                      <textarea
+                        matInput
+                        formControlName="description"
+                        placeholder="Ex. It makes me feel..."
+                        class="w-screen h-36"
+                      ></textarea>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div
+                  class="submit-button flex justify-center items-center flex-col py-7"
+                >
+                  <button
+                    type="submit"
+                    class="bg-blue-600 flex justify-center items-center h-14 w-24 text-white rounded-xl"
+                  >
+                    submit
+                  </button>
+                  <div
+                    [ngClass]="activeMap ? 'visible' : 'invisible'"
+                   
+                    class="container-fluid py-3 flex justify-center items-center"
+                  >
+                    <div id="map">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
